@@ -21,7 +21,7 @@ class DotaRepositoryImpl @Inject constructor(
         } else {
             val heroesListNet = apiHelper.getDotaHeroes()
             fileCacheManager.saveToFile(heroesListNet ?: emptyList())
-            heroesListNet ?: emptyList()
+            fileCacheManager.getFileData()
         }
     }
 }
